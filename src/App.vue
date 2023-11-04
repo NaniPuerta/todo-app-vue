@@ -36,7 +36,7 @@
           </router-link>
         </li>
       </ul>
-      <button v-if="someCompleted" class="clear-completed" @click="clearCompleted">
+      <button v-if="isAnyCompleted" class="clear-completed" @click="clearCompleted">
         Clear completed
       </button>
     </footer>
@@ -53,7 +53,7 @@
     },
     computed: {
       ...mapState(['todos']),
-      someCompleted() {
+      isAnyCompleted() {
         return this.todos?.filter((item) => item.completed)?.length !== 0;
       },
     },

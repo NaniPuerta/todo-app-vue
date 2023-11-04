@@ -1,5 +1,5 @@
 <template>
-  <!-- the component element for each todo in the list, this way is easier to handle individual actions on each items -->
+  <!-- the component element for each todo in the list -->
   <li :class="{ completed: item?.completed, editing: onEdit }" @dblclick="startEdition">
     <div class="view">
       <input
@@ -19,7 +19,7 @@
       v-model="inputValue"
       @keyup.enter="saveEdition"
       @keyup.esc="finishEdition"
-      @blur="onFocusLost"
+      @blur="onBlur"
     />
   </li>
 </template>
@@ -51,11 +51,9 @@
         this.inputValue = '';
         this.onEdit = false;
       },
-      onFocusLost() {
+      onBlur() {
         if (this.onEdit) this.saveEdition();
       },
     },
   };
 </script>
-
-<style scoped></style>
