@@ -1,5 +1,7 @@
 # todo-app-vue
 
+Todo list web app developed using Vue3 with Vuex and Vue Router.
+
 ## Project setup
 ```
 npm install
